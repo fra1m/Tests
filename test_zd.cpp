@@ -37,7 +37,6 @@ void readAndPrintSections(const std::string &filename,
       break;
     }
 
-    // Если в нужном разделе, выводим строки
     if (inSection) {
       std::cout << line << std::endl;
     }
@@ -98,9 +97,8 @@ int main(int argc, char *argv[]) {
     std::cin >> choice;
 
     if (std::cin.fail()) {
-      std::cin.clear(); // Очистка флага ошибки
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max(),
-                      '\n'); // Очистка буфера ввода
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
       std::cout << "Неверный ввод. Пожалуйста, введите число: ";
       std::cin >> choice;
     }
